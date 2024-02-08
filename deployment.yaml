@@ -14,20 +14,6 @@ spec:
     spec:
       containers:
       - name: analytics-app
-        image: d24a36faec34
+        image: kproject:latest 
         ports:
-        - containerPort: 5000  
-        env:
-        - name: DB_USERNAME
-          value: "postgres"
-        - name: DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: postgre-postgresql
-              key: postgres-password
-        - name: DB_HOST
-          value: postgre-postgresql.default.svc.cluster.local"
-        - name: DB_PORT
-          value: "5432"
-        - name: DB_NAME
-          value: "postgres"
+        - containerPort: 5000
